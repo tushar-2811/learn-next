@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Link from "next/link";
 
 
 
@@ -14,13 +15,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`antialiased`}
-      >
+    <html lang="en" >
+      <body>
         <div className="border-b-2 flex justify-between px-8 py-4 items-center">
           <h3 className="text-red-500 font-bold text-xl">My App</h3>
-          <button className="border-2 border-black px-4 py-2 rounded-lg">Sign In</button>
+          <Link href={"/signin"} className="border-2 border-black px-4 py-2 rounded-lg">Sign In</Link>
         </div>
         {children}
       </body>
